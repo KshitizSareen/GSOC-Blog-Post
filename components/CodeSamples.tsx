@@ -69,27 +69,27 @@ export default function CodeSamplesGithub(){
             alignItems: 'center',
             flexWrap: 'wrap',
         }}>
-            <CodeSample srcImage="images/CodeSample1.png" 
+            <CodeSample srcImage="/images/CodeSample1.png" 
             frontendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-file-explorer" 
             backendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L1377" 
             heading="Dataset File System Manager"/>
-            <CodeSample srcImage="images/CodeSample2.png" 
+            <CodeSample srcImage="/images/CodeSample2.png" 
             frontendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-file-explorer/csvdata-browser" 
             backendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L185" 
             heading="CSV Data Browser"/>
-            <CodeSample srcImage="images/CodeSample3.png" 
+            <CodeSample srcImage="/images/CodeSample3.png" 
             frontendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-file-explorer/csvdata-browser/visualize-data" 
             backendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L185" 
             heading="Dataset Visualizations"/>
-            <CodeSample srcImage="images/CodeSample4.png" 
+            <CodeSample srcImage="/images/CodeSample4.png" 
             frontendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-overview/project-overview-view/project-content/project-notebook-item" 
             backendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L207" 
             heading="Notebook Integration System"/>
-            <CodeSample srcImage="images/CodeSample5.png" 
+            <CodeSample srcImage="/images/CodeSample5.png" 
             frontendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-overview/project-overview-view/project-content" 
             backendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L700" 
             heading="Notebook Creation"/>
-            <CodeSample srcImage="images/CodeSample6.png" 
+            <CodeSample srcImage="/images/CodeSample6.png" 
             frontendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/register" 
             backendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/AccountController.cs#L230" 
             heading="Sign up functionality"/>

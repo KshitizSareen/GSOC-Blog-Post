@@ -10,7 +10,7 @@ export default function Header() {
           <div className="shrink-0 mr-4">
             {/* Logo */}
             <a href="http://dev.analysim.tech/home" className="block" aria-label="Cruip" target='_blank'>
-              <img src='images/favicon.png'/>
+              <img src='/images/favicon.png'/>
             </a>
           </div>
 
