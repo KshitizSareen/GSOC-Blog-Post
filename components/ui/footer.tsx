@@ -16,9 +16,9 @@ export default function Footer() {
             <div className="md:col-span-4 lg:col-span-5">
               <div className="mb-2">
                 {/* Logo */}
-                <Link href="/" className="inline-block" aria-label="Cruip">
+                <a href="http://dev.analysim.tech/home" className="inline-block" aria-label="Cruip" target='_blank'>
                   <img src='/images/favicon.png'/>
-                </Link>
+                </a>
               </div>
               <div className="text-gray-400">This blog was created by Kshitiz Sareen. I have listed my social media profiles below. I look forward to connect.</div>
             </div>

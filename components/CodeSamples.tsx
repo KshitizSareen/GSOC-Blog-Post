@@ -1,16 +1,64 @@
 'use client'
 import { useMediaQuery } from "@mui/material";
-import React from "react";
-import { Button, ButtonGroup, Image } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, ButtonGroup, Image, Modal } from "react-bootstrap";
+import ModalImage from "./ModalImage";
 
 interface CodeSampleProps{
     srcImage: string;
     frontendCodeUrl: string;
     backendCodeUrl: string;
-    heading: string
+    heading: string;
+    onClick : (image: string)=>void;
 }
 
-const CodeSample : React.FC<CodeSampleProps>=({srcImage,frontendCodeUrl,backendCodeUrl,heading})=>{
+interface ImageModalProps{
+    show: boolean;
+    handleClose: ()=>void;
+    img: string;
+}
+
+const CodeSamples = [
+    {
+        src: "/images/CodeSample1.png",
+        frontendCodeUrl: "https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-file-explorer",
+        backendCodeUrl: "https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L1377",
+        heading: "Dataset File System Manager"
+    },
+    {
+        src: "/images/CodeSample2.png",
+        frontendCodeUrl: "https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-file-explorer/csvdata-browser",
+        backendCodeUrl: "https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L185",
+        heading: "CSV Data Browser"
+    },
+    {
+        src: "/images/CodeSample3.png",
+        frontendCodeUrl: "https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-file-explorer/csvdata-browser/visualize-data",
+        backendCodeUrl: "https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L185",
+        heading: "CSV Data Browser"
+    },
+    {
+        src: "/images/CodeSample4.png",
+        frontendCodeUrl: "https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-overview/project-overview-view/project-content/project-notebook-item",
+        backendCodeUrl: "https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L207",
+        heading: "Notebook Integration System"
+    },
+    {
+        src: "/images/CodeSample5.png",
+        frontendCodeUrl: "https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-overview/project-overview-view/project-content",
+        backendCodeUrl: "https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L700",
+        heading: "Notebook Creation"
+    },
+    {
+        src: "/images/CodeSample6.png",
+        frontendCodeUrl: "https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/register",
+        backendCodeUrl: "https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/AccountController.cs#L230",
+        heading: "Sign up functionality"
+    }
+
+]
+
+const CodeSample : React.FC<CodeSampleProps>=({srcImage,frontendCodeUrl,backendCodeUrl,heading,onClick})=>{
 
     const matches = useMediaQuery('(max-width:700px)');
 
@@ -24,8 +72,10 @@ const CodeSample : React.FC<CodeSampleProps>=({srcImage,frontendCodeUrl,backendC
             width: matches ? '90vw' : '600px',
             borderRadius: '10px',
         }} className="bg-gray-700">
-            <Button href={srcImage} target="_blank" style={{
+            <Button style={{
                 padding: 0
+            }} onClick={()=>{
+                onClick(srcImage);
             }}>
             <Image src={srcImage} style={{
                 width: '100%',
@@ -59,7 +109,21 @@ const CodeSample : React.FC<CodeSampleProps>=({srcImage,frontendCodeUrl,backendC
     )
 }
 
+
 export default function CodeSamplesGithub(){
+
+    const [modal,showModal] = useState(false);
+    const [image,setImage] = useState("");
+
+    const showImageInModal = (image: string)=>{
+        setImage(image);
+        showModal(true);
+    }
+
+    const handleClose = () =>{
+        showModal(false);
+    }
+
     return(
         <>
         <div style={{
@@ -69,31 +133,19 @@ export default function CodeSamplesGithub(){
             alignItems: 'center',
             flexWrap: 'wrap',
         }}>
-            <CodeSample srcImage="/images/CodeSample1.png" 
-            frontendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-file-explorer" 
-            backendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L1377" 
-            heading="Dataset File System Manager"/>
-            <CodeSample srcImage="/images/CodeSample2.png" 
-            frontendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-file-explorer/csvdata-browser" 
-            backendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L185" 
-            heading="CSV Data Browser"/>
-            <CodeSample srcImage="/images/CodeSample3.png" 
-            frontendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-file-explorer/csvdata-browser/visualize-data" 
-            backendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L185" 
-            heading="Dataset Visualizations"/>
-            <CodeSample srcImage="/images/CodeSample4.png" 
-            frontendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-overview/project-overview-view/project-content/project-notebook-item" 
-            backendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L207" 
-            heading="Notebook Integration System"/>
-            <CodeSample srcImage="/images/CodeSample5.png" 
-            frontendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-overview/project-overview-view/project-content" 
-            backendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L700" 
-            heading="Notebook Creation"/>
-            <CodeSample srcImage="/images/CodeSample6.png" 
-            frontendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/register" 
-            backendCodeUrl="https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/AccountController.cs#L230" 
-            heading="Sign up functionality"/>
+            {
+                CodeSamples.map((codeSample,index)=>{
+                    return(
+                        <CodeSample srcImage={codeSample.src} 
+                        frontendCodeUrl={codeSample.frontendCodeUrl} 
+                        backendCodeUrl={codeSample.backendCodeUrl} 
+                        heading={codeSample.heading} key={index}
+                        onClick={showImageInModal}/>
+                    )
+                })
+            }
             </div>
+            <ModalImage alt={"Image could not be loaded"} image={image} width={2400}  modalOpen={modal} handleClose={handleClose} />
         </>
     )
 }
