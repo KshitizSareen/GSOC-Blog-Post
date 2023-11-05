@@ -7,6 +7,9 @@ import 'aos/dist/aos.css'
 
 import PageIllustration from '@/components/page-illustration'
 import Footer from '@/components/ui/footer'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
 export default function DefaultLayout({
   children,

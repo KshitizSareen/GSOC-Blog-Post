@@ -1,3 +1,24 @@
+import { IconDefinition, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
+import React from "react";
+
+interface RenderLinkInterface{
+  icon: IconDefinition;
+  link: string
+}
+
+const RenderLink : React.FC<RenderLinkInterface> = ({icon,link}) =>{
+  return(
+    <a href={link} style={{
+      margin: '10px'
+    }}>
+    <FontAwesomeIcon icon={icon} fontSize={'32px'}/>
+    </a>
+  )
+}
+
 export default function Newsletter() {
   return (
     <section>
@@ -23,19 +44,20 @@ export default function Newsletter() {
 
             {/* CTA content */}
             <div className="mb-6 lg:mr-16 lg:mb-0 text-center lg:text-left lg:w-1/2">
-              <h3 className="h3 text-white mb-2">Stay in the loop</h3>
-              <p className="text-purple-200 text-lg">Join our newsletter to get top news before anyone else.</p>
+              <h3 className="h3 text-white mb-2">We are looking for People To Join us</h3>
+              <p className="text-purple-200 text-lg">Connect with us get started to start working on this project</p>
             </div>
 
-            {/* CTA form */}
-            <form className="w-full lg:w-1/2">
-              <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:max-w-none">
-                <input type="email" className="w-full appearance-none bg-purple-700 border border-purple-500 focus:border-purple-300 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-white placeholder-purple-400" placeholder="Your best email…" aria-label="Your best email…" />
-                <a className="btn text-purple-600 bg-purple-100 hover:bg-white shadow" href="#0">Subscribe</a>
-              </div>
-              {/* Success message */}
-              {/* <p className="text-center lg:text-left lg:absolute mt-2 opacity-75 text-sm">Thanks for subscribing!</p> */}
-            </form>
+            <div style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-evenly',
+              flexWrap: 'wrap'
+            }}>
+              <RenderLink icon={faLinkedin} link="https://www.linkedin.com/in/kshitiz-sareen-6783879a/"/>
+              <RenderLink icon={faGithub} link="https://github.com/soft-eng-practicum/AnalySim"/>
+              <RenderLink icon={faEnvelope} link="mailto:kshitizsareen709@gmail.com?subject=Contribute%20To%20Analysim%20&body=Message"/>
+            </div>
 
           </div>
 
