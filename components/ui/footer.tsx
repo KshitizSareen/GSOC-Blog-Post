@@ -17,7 +17,7 @@ export default function Footer() {
               <div className="mb-2">
                 {/* Logo */}
                 <Link href="/" className="inline-block" aria-label="Cruip">
-                  <img src='/images/favicon.png'/>
+                  <img src='images/favicon.png'/>
                 </Link>
               </div>
               <div className="text-gray-400">This blog was created by Kshitiz Sareen. I have listed my social media profiles below. I look forward to connect.</div>
