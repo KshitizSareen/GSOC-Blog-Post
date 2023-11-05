@@ -9,9 +9,9 @@ export default function Header() {
           {/* Site branding */}
           <div className="shrink-0 mr-4">
             {/* Logo */}
-            <Link href="http://dev.analysim.tech/home" className="block" aria-label="Cruip">
+            <a href="http://dev.analysim.tech/home" className="block" aria-label="Cruip" target='_blank'>
               <img src='/images/favicon.png'/>
-            </Link>
+            </a>
           </div>
 
           <MobileMenu />

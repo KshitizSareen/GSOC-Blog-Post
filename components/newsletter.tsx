@@ -13,7 +13,7 @@ const RenderLink : React.FC<RenderLinkInterface> = ({icon,link}) =>{
   return(
     <a href={link} style={{
       margin: '10px'
-    }}>
+    }} target='_blank'>
     <FontAwesomeIcon icon={icon} fontSize={'32px'}/>
     </a>
   )
