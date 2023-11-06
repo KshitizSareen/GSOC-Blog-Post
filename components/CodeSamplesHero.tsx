@@ -1,5 +1,7 @@
 'use client';
 
+import { Button } from "react-bootstrap";
+
 export default function Hero() {
 
 
@@ -27,6 +29,13 @@ export default function Hero() {
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="h1 mb-4" data-aos="fade-up">Checkout my Code Samples</h1>
             <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200"></p>
+            <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
+              <div data-aos="fade-up" data-aos-delay="400">
+                <Button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full sm:w-auto sm:ml-4" href="https://github.com/soft-eng-practicum/AnalySim/commits/cns2023_demo?author=KshitizSareen" target="_blank" style={{
+                  marginBottom: '20px'
+                }}>Checkout My Contributions</Button>
+              </div>
+            </div>
           </div>
 
         </div>
