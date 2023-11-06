@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'GSOC Blog ',
-  description: 'Page description',
+  description: 'Blog Post for GSOC 2023',
 }
 
 import Hero from '@/components/hero'
