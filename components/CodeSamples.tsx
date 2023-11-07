@@ -35,7 +35,7 @@ const CodeSamples = [
         src: "/images/CodeSample3.png",
         frontendCodeUrl: "https://github.com/soft-eng-practicum/AnalySim/tree/cns2023_demo/src/Analysim.Web/ClientApp/src/app/projects/project-file-explorer/csvdata-browser/visualize-data",
         backendCodeUrl: "https://github.com/soft-eng-practicum/AnalySim/blob/cns2023_demo/src/Analysim.Web/Controllers/ProjectController.cs#L185",
-        heading: "CSV Data Browser"
+        heading: "Dataset Visualization System"
     },
     {
         src: "/images/CodeSample4.png",
